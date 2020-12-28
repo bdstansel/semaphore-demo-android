@@ -2,11 +2,13 @@ version: v1.0
 name: Verification Pipeline
 agent:
   machine:
-    type: e1-standard-2
+    type: e1-standard-8
     os_image: ubuntu1804
   containers:
     - name: main
       image: 'registry.semaphoreci.com/android:29'
+execution_time_limit:
+  hours: 24
 global_job_config:
   env_vars:
     - name: ADB_INSTALL_TIMEOUT
